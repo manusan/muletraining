@@ -15,9 +15,10 @@ documentation:
 /customers:
   description: get all customers
   get:  
-    body: 
-      application/json: 
-        example: |
+    responses: 
+      200: 
+        body: 
+         example: |
           [
             "id":1
           ]
@@ -31,12 +32,13 @@ documentation:
   /{customerId}:
     get:
       description: get a customer
-      body:
-        application/json: 
-          example: |
-            {
+      responses: 
+        200: 
+          body: 
+           example: |
+            [
               "id":1
-            }
+            ]
     delete:
       description: delete a customer
       responses: 
@@ -58,9 +60,10 @@ documentation:
     /accounts:
       description: get all accounts
       get:  
-        body: 
-          application/json: 
-            example: |
+        responses: 
+          200: 
+            body: 
+             example: |
               [
                 "id":1
               ]
@@ -74,12 +77,13 @@ documentation:
       /{accountId}:
         get:
           description: get an account
-          body:
-            application/json: 
-              example: |
-                {
+          responses: 
+            200: 
+              body: 
+               example: |
+                [
                   "id":1
-                }
+                ]
         delete:
           description: delete an account
           responses: 
@@ -101,27 +105,30 @@ documentation:
         /incomingTransfers:
           description: get all incoming transfers
           get:  
-            body: 
-              application/json: 
-                example: |
+            responses: 
+              200: 
+                body: 
+                 example: |
                   [
                     "id":1
                   ]
           /{tranferId}:
             get:
               description: get an incoming transfers
-              body:
-                application/json: 
-                  example: |
-                    {
+              responses: 
+                200: 
+                  body: 
+                   example: |
+                    [
                       "id":1
-                    }
+                    ]
         /outcomingTransfers:
           description: get all outcoming transfers
           get:  
-            body: 
-              application/json: 
-                example: |
+            responses: 
+              200: 
+                body: 
+                 example: |
                   [
                     "id":1
                   ]
@@ -136,18 +143,20 @@ documentation:
           /{tranferId}:
             get:
               description: get an incoming transfer detail
-              body:
-                application/json: 
-                  example: |
-                    {
+              responses: 
+                200: 
+                  body: 
+                   example: |
+                    [
                       "id":1
-                    }
+                    ]
     /transfers:
       description: get all transfers (incoming and outcoming)
       get:  
-        body: 
-          application/json: 
-            example: |
+        responses: 
+          200: 
+            body: 
+             example: |
               [
                 "id":1
               ]
