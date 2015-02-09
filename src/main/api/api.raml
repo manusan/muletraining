@@ -1,0 +1,153 @@
+#%RAML 0.8
+---
+title: My Banking API
+version: 1.0
+baseUri: http://localhost/api/{version}
+mediaType: application/json
+documentation:
+  - title:  My banking API
+    content: The API doc
+    
+#customers/accounts/transfers
+#customers/accounts/incomingTransfers
+#customers/accounts/outcomingTransfers
+
+/customers:
+  description: get all customers
+  get:  
+    body: 
+      application/json: 
+        example: |
+          [
+            "id":1
+          ]
+  post:
+    body: 
+      application/json: 
+        example: |
+          [
+            "id":1
+          ]
+  /{customerId}:
+    get:
+      description: get a customer
+      body:
+        application/json: 
+          example: |
+            {
+              "id":1
+            }
+    delete:
+      description: delete a customer
+      responses: 
+        200: 
+          body: 
+            application/json: 
+              example: |
+                {
+                 "customer successfully deleted"
+                }                
+    put:
+      description: Modify a customer
+      body:
+        application/json: 
+          example: |
+            {
+              "name":""
+            }    
+    /accounts:
+      description: get all accounts
+      get:  
+        body: 
+          application/json: 
+            example: |
+              [
+                "id":1
+              ]
+      post:
+        body: 
+          application/json: 
+            example: |
+              [
+                "id":1
+              ]
+      /{accountId}:
+        get:
+          description: get an account
+          body:
+            application/json: 
+              example: |
+                {
+                  "id":1
+                }
+        delete:
+          description: delete an account
+          responses: 
+            200: 
+              body: 
+                application/json: 
+                  example: |
+                    {
+                     "account successfully deleted"
+                    }                    
+        put:
+          description: Modify an account
+          body:
+            application/json: 
+              example: |
+                {
+                  "name":""
+                }       
+        /incomingTransfers:
+          description: get all incoming transfers
+          get:  
+            body: 
+              application/json: 
+                example: |
+                  [
+                    "id":1
+                  ]
+          /{tranferId}:
+            get:
+              description: get an incoming transfers
+              body:
+                application/json: 
+                  example: |
+                    {
+                      "id":1
+                    }
+        /outcomingTransfers:
+          description: get all outcoming transfers
+          get:  
+            body: 
+              application/json: 
+                example: |
+                  [
+                    "id":1
+                  ]
+          post:
+            description: add new outcoming transfer
+            body: 
+              application/json: 
+                example: |
+                  [
+                    "id":1
+                  ]
+          /{tranferId}:
+            get:
+              description: get an incoming transfer detail
+              body:
+                application/json: 
+                  example: |
+                    {
+                      "id":1
+                    }
+    /transfers:
+      description: get all transfers (incoming and outcoming)
+      get:  
+        body: 
+          application/json: 
+            example: |
+              [
+                "id":1
+              ]
